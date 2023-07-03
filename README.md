@@ -30,7 +30,7 @@ git clone https://github.com/AayushGithub/LeetAI.git
 ```
 pip install -r requirements.txt
 ```
-3. 3. Sign up for an OpenAI API key and set it as an environment variable `OPENAI_API_KEY`.
+3. Sign up for an OpenAI API key and set it as an environment variable `OPENAI_API_KEY`.
 
 4. Organize Leetcode solution files in the following format:
 
