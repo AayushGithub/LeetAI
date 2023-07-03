@@ -31,7 +31,7 @@ jobs:
 
       - name: Run parse_solution.py
         run: |
-          python ./tools/ parse_solution.py ${{ steps.dirname.outputs.dirname }}
+          python ./tools/parse_solution.py ${{ steps.dirname.outputs.dirname }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
