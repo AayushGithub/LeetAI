@@ -22,7 +22,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run parse_solution.py
-        run: python ./tools/parse_solution.py ${{ github.workspace }}/${{ github.event_path }}
+        run: |
+          cd ${{ github.workspace }}
+          python parse_solution.py ${{ github.event_path }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
