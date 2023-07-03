@@ -9,4 +9,3 @@ class Solution(object):
                 return [checkList[target-nums[i]], i] 
             checkList[nums[i]] = i
         return []
-            
