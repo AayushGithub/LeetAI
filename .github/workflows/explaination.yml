@@ -21,10 +21,17 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v37
+
+      - name: Get directory name of changed file
+        id: dirname
+        run: echo "dirname=$(dirname ${{ steps.changed-files.outputs.files }})" >> $GITHUB_OUTPUT
+
       - name: Run parse_solution.py
         run: |
-          cd ${{ github.workspace }}
-          python ./tools/parse_solution.py ${{ github.event_path }}
+          python parse_solution.py ${{ steps.dirname.outputs.dirname }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
