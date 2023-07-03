@@ -24,7 +24,7 @@ jobs:
       - name: Run parse_solution.py
         run: |
           cd ${{ github.workspace }}
-          python parse_solution.py ${{ github.event_path }}
+          python ./tools/parse_solution.py ${{ github.event_path }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
